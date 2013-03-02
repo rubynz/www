@@ -1,0 +1,23 @@
+#comms {
+  margin-bottom: 40px;
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+  #comms {
+    margin-bottom: 25px;
+  }
+}
+
+#mailing-list span {
+  background: transparent url(../images/mailing-list-icon.png) 12px 50% no-repeat;
+}
+#irc-chat span {
+  background: transparent url(../images/irc-icon.png) 12px 50% no-repeat;
+}
+#twitter span {
+  background: transparent url(../images/twitter-icon.png) 12px 0px no-repeat;
+}
+#twitter {
+  margin-right: 0;
+}
