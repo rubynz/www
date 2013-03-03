@@ -15,15 +15,3 @@
 #twitter {
   margin-right: 0;
 }
-
-/* Start: Used for external sites referencing this file only e.g. Christchurch */
-#mailing-list span {
-  background: transparent url(../images/mailing-list-icon.png) 12px 50% no-repeat;
-}
-#irc-chat span {
-  background: transparent url(../images/irc-icon.png) 12px 50% no-repeat;
-}
-#twitter span {
-  background: transparent url(../images/twitter-icon.png) 12px 0px no-repeat;
-}
-/* End: External */
