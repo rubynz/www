@@ -369,22 +369,17 @@ footer a:hover {
 	padding: 0;
 	margin-bottom: 2em
 }
-.company .info {
+.company .logo {
 	float: left;
 	margin-right: 30px;
 	width: 150px;
 }
-.company .info h3 {
-	text-align: center;
-	border-bottom: solid 1px #aaaaaa;
-	padding-bottom: 1em;
-	margin-bottom: 1em;
-}
-.company .info img {
+.company .logo img,
+.company .logo .image-placeholder {
 	margin-bottom: 1em;
 	width: 100%;
 }
-.company .blurb {
+.company .info {
 	float: left;
 	width: 440px;
 }
@@ -393,6 +388,7 @@ footer a:hover {
 	padding: 3em;
 	text-transform: uppercase;
 	color: #777777;
+	box-sizing: border-box;
 }
 
 /* Clearfix */
