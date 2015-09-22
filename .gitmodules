@@ -1,3 +1,3 @@
 [submodule "codeofconduct-repo"]
 	path = codeofconduct-repo
-	url = git@github.com:nzruby/codeofconduct.git
+	url = https://github.com/nzruby/codeofconduct.git
