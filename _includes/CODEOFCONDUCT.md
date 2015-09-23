@@ -10,7 +10,7 @@ Some Ruby New Zealand spaces may have additional rules in place, which will be m
 
 Ruby New Zealand is dedicated to providing a harassment-free experience for everyone. We do not tolerate harassment of participants in any form.
 
-This code of conduct applies to all Ruby New Zealand spaces, including including our associated mailing lists, events, Slack group, and projects; both online and off. Anyone who violates this code of conduct may be sanctioned or expelled from these spaces at the discretion of the Ruby New Zealand committee.
+This code of conduct applies to all Ruby New Zealand spaces, including our associated mailing lists, events, Slack group, and projects; both online and off. Anyone who violates this code of conduct may be sanctioned or expelled from these spaces at the discretion of the Ruby New Zealand committee.
 
 Some Ruby New Zealand spaces may have additional rules in place, which will be made clearly available to participants. Participants are responsible for knowing and abiding by these rules.
 
