@@ -1,122 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/branding.css" media="screen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Poppins" rel="stylesheet">
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+      <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="print" />
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script src="https://use.fontawesome.com/5845f7da54.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="javascripts/main.js"></script>
+
     <title>Ruby New Zealand</title>
   </head>
 
-  <body>
-    <div id="container">
-      <div class="inner">
-
-        <header>
-          <h1>Ruby New Zealand</h1>
-          <h2>Ruby in Aotearoa New Zealand</h2>
-        </header>
-
-        <section id="comms" class="clearfix">
-          <a href="http://slack.ruby.nz/" id="irc-chat" class="button"><i class="icon-list-alt"></i> Slack Chat</a>
-          <a href="https://twitter.com/RubyNewZealand" id="twitter" class="button"><i class="icon-twitter"></i> Twitter</a>
-        </section>
-
-        <section id="main_content">
-          <h3>Local user groups</h3>
-          <ul>
-            <li>
-              <a href="http://auckland.ruby.org.nz">Auckland</a>:
-              Meetup monthly on the third Thursday.
-            </li>
-            <li>
-              <a href="http://wellington.ruby.org.nz">Wellington</a>:
-              Meetup monthly on the last Wednesday.
-            </li>
-            <li>
-              <a href="http://christchurch.ruby.org.nz">Christchurch</a>:
-              Meetup monthly on the third Thursday.
-            </li>
-          </ul>
-
-          <h3>Events</h3>
-          <ul>
-            <li>
-              <a href="http://railsgirls.com/wellington">Rails Girls Wellington</a> will be held August 27th and 28th 2016.
-            </li>
-            <li>
-              <a href="http://camp.ruby.nz">Rails Camp NZ #7</a> will be held around Christchurch in early 2017.
-            </li>
-          </ul>
-
-          <h3>About Us</h3>
-
-          <p>Ruby New Zealand fosters and supports the Ruby programming language, its users and community in New Zealand. It assists with community events such as local meetups, Rails Camps and Rails Girls, and helps ensure these are safe and welcoming spaces.</p>
-
-          <p>Ruby NZ was incorporated on June 5th 2014, and is Society #2606303.</p>
-
-          <h3>Code of Conduct</h3>
-
-          <p>Ruby New Zealand has a code of conduct for all its events, projects, and services that members are
-          expected to abide by. An up-to-date copy is <a href="/code-of-conduct/" target="_blank">available here.</a></p>
-
-          <h3>Current Committee</h3>
-          <p>After the vote held at Rails Camp NZ #6 on March 20, 2016 the committee is:</p>
-          <ul>
-            <li><strong>President:</strong> <a href="https://twitter.com/a_wagener" target="_blank">Amanda Wagener</a></li>
-            <li><strong>Secretary:</strong> <a href="https://twitter.com/danielfone" target="_blank">Daniel Fone</a></li>
-            <li><strong>Treasurer:</strong> <a href="https://twitter.com/steveh7" target="_blank">Steve Hoeksema</a></li>
-            <li>
-              <strong>General Members:</strong>
-              <ul>
-                <li><a href="https://twitter.com/raquelxmoss" target="_blank">Raquel Moss</a></li>
-                <li><a href="https://twitter.com/ur5us" target="_blank">Juri Hahn</a></li>
-                <li><a href="https://twitter.com/nz_cub3y" target="_blank">Charles Peach</a></li>
-                <li><a href="https://twitter.com/merxplat" target="_blank">Merrin Macleod</a></li>
-              </ul>
-            </li>
-          </ul>
-
-          <h3>Past Committee Members</h3>
-
-          <ul>
-            <li><a href="https://twitter.com/eoinkelly" target="_blank">Eoin Kelly</a> (treasurer 2014-2016)</li>
-            <li><a href="https://twitter.com/parndt" target="_blank">Philip Arndt</a> (president 2014-2016)</li>
-            <li><a href="https://twitter.com/megahbite" target="_blank">Megan Bowra-Dean</a> (general member 2015-2016)</li>
-            <li><a href="https://twitter.com/jamesotron" target="_blank">James Harton</a> (general member 2015-2016)</li>
-            <li><a href="https://twitter.com/breccan" target="_blank">Breccan Mcleod-Lundy</a> (general member 2014-2015)</li>
-            <li><a href="https://twitter.com/terrcin" target="_blank">Nahum Wild</a> (general member 2014-2015)</li>
-          </ul>
-
-        </section>
-
-        <footer>
-          This website is maintained by <a href="https://github.com/nzruby">Ruby New Zealand</a>.
-        </footer>
-
-        <script type="text/javascript">
-
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-38964536-1']);
-          _gaq.push(['_setDomainName', 'ruby.org.nz']);
-          _gaq.push(['_trackPageview']);
-
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-
-        </script>
-
+  <body class="pure-g">
+    <div class="container">
+      <div class="mobile-visible mobile-menu sticky">
+        <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
       </div>
+      <aside class="sidebar pure-u-2-3 pure-u-md-1-3 mobile-hidden">
+        <div class="inner-container">
+          <div class="mobile-hidden">
+            <img src="images/logo.png" class="logo" alt="Ruby New Zealand" />
+          </div>
+          <header class="mobile-hidden">
+            <h1>Ruby New Zealand</h1>
+            <h3>Ruby in Aotearoa New Zealand</h3>
+          </header>
+          <nav class="menu">
+            <a href="#join-the-community">Join the Community</a>
+            <a href="#membership">Membership</a>
+            <a href="#local-meetups">Local Meetups</a>
+            <a href="#events">Events</a>
+            <a href="#code-of-conduct">Code of Conduct</a>
+            <a href="#about-us">About us</a>
+            <a href="#current-committee">Current Committee</a>
+            <a href="#past-committee">Past Committee</a>
+          </nav>
+        </div>
+      </aside>
+
+      <article class="main pure-u-1 pure-u-md-2-3">
+        <div class="inner-container">
+          <div class="pure-g">
+            <header class="mobile-visible mobile-header pure-u-1">
+              <h1>Ruby New Zealand</h1>
+              <h3>Ruby in Aotearoa New Zealand</h3>
+              <div class="mobile-visible">
+                <img src="images/logo.png" class="mobile-logo" alt="Ruby New Zealand" />
+              </div>
+              <hr>
+            </header>
+          </div>
+          <section class="pure-g" id="join-the-community">
+            <div class="pure-u-1">
+              <h2>Join the Community</h2>
+              <p>For code chat, job listings, ruby help, keyboard nerdery, and banter, join us on <a href="http://slack.ruby.nz">Slack</a>. We're also on Twitter at <a href="http://twitter.com/rubynewzealand">@RubyNewZealand</a>.</p>
+
+              <p></p>
+            </div>
+            <div class="pure-u-1 social">
+              <a href="http://slack.ruby.nz">
+                <i class="fa fa-slack fa-3x" alt="Ruby NZ Slack"></i>
+              </a>
+              <a href="https://github.com/nzruby">
+                <i class="fa fa-github fa-3x" alt="Ruby NZ Github"></i>
+              </a>
+              <a href="http://twitter.com/rubynewzealand">
+                <i class="fa fa-twitter fa-3x" alt="Ruby NZ Twitter"></i>
+              </a>
+            </div>
+          </section>
+          <hr />
+          <section id="membership">
+            <h2>Membership</h2>
+
+            <p><a href="http://membership.ruby.nz" alt="Ruby NZ membership">Check and update your membership, or register to become a member.</a> Becoming a member means that you can have your say in the Ruby AGM ✨ </p>
+          </section>
+          <hr />
+          <section id="local-meetups">
+            <h2>Local Meetups</h2>
+            <ul>
+              <li>
+                <a href="http://auckland.ruby.org.nz">Auckland</a>:
+                This is a monthly group that explores the use of Ruby. Welcomes anyone interested in the language!
+              </li>
+              <li>
+                <a href="http://wellington.ruby.org.nz">Wellington</a>:
+                WellRailed: Wellington's Ruby on Rails Community Group
+              </li>
+              <li>
+                <a href="https://www.meetup.com/WellingtonRailsn00bs/">Wellington Railsn00bs</a>:
+                A monthly-ish meetup that welcomes beginners of all types. If you're new to coding, or new to Ruby or Rails, go along.
+              </li>
+              <li>
+                <a href="http://christchurch.ruby.org.nz">Christchurch</a>:
+                Super friendly group of programmers meeting monthly to discuss all things about the Ruby programming language.
+              </li>
+            </ul>
+
+            <p>Do you run a meetup that's not listed here? <a href="https://github.com/nzruby/www">Make a pull request</a> to add yours to the site.</p>
+          </section>
+          <hr />
+          <section id="events">
+            <h2>Events</h2>
+            <ul>
+              <li>
+                <a href="http://camp.ruby.nz">Rails Camp NZ #7</a> will be held around Christchurch in February 2017.
+              </li>
+            </ul>
+          </section>
+          <hr />
+          <section id="code-of-conduct">
+            <h2>Code of Conduct</h2>
+
+            <p>Ruby New Zealand has a code of conduct for all its events, projects, and services that members are expected to abide by. An up-to-date copy is <a href="/code-of-conduct/" target="_blank">available here.</a></p>
+          </section>
+          <hr />
+          <section id="about-us">
+            <h2>About Us</h2>
+
+            <p>Ruby New Zealand fosters and supports the Ruby programming language, its users and community in New Zealand. It assists with community events such as local meetups, Rails Camps and Rails Girls, and helps ensure these are safe and welcoming spaces.</p>
+
+            <p>Ruby NZ was incorporated on June 5th 2014, and is Society #2606303.</p>
+          </section>
+          <hr />
+          <section id="current-committee">
+            <h2>Current Committee</h2>
+            <p>After the vote held at Rails Camp NZ #6 on March 20, 2016 the committee is:</p>
+            <ul>
+              <li><strong>President:</strong> <a href="https://twitter.com/a_wagener" target="_blank">Amanda Wagener</a></li>
+              <li><strong>Secretary:</strong> <a href="https://twitter.com/danielfone" target="_blank">Daniel Fone</a></li>
+              <li><strong>Treasurer:</strong> <a href="https://twitter.com/steveh7" target="_blank">Steve Hoeksema</a></li>
+              <li>
+                <strong>General Members:</strong>
+                <ul>
+                  <li><a href="https://twitter.com/raquelxmoss" target="_blank">Raquel Moss</a></li>
+                  <li><a href="https://twitter.com/ur5us" target="_blank">Juri Hahn</a></li>
+                  <li><a href="https://twitter.com/nz_cub3y" target="_blank">Charles Peach</a></li>
+                  <li><a href="https://twitter.com/merxplat" target="_blank">Merrin Macleod</a></li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <hr />
+          <section id="past-committee">
+            <h2>Past Committee Members</h2>
+            <ul>
+              <li><a href="https://twitter.com/eoinkelly" target="_blank">Eoin Kelly</a> (treasurer 2014-2016)</li>
+              <li><a href="https://twitter.com/parndt" target="_blank">Philip Arndt</a> (president 2014-2016)</li>
+              <li><a href="https://twitter.com/megahbite" target="_blank">Megan Bowra-Dean</a> (general member 2015-2016)</li>
+              <li><a href="https://twitter.com/jamesotron" target="_blank">James Harton</a> (general member 2015-2016)</li>
+              <li><a href="https://twitter.com/breccan" target="_blank">Breccan Mcleod-Lundy</a> (general member 2014-2015)</li>
+              <li><a href="https://twitter.com/terrcin" target="_blank">Nahum Wild</a> (general member 2014-2015)</li>
+            </ul>
+          </section>
+        </div>
+      </article>
+      <footer class="pure-u-1">
+        <small>This website is maintained by <a href="https://github.com/nzruby">Ruby New Zealand</a>.</small>
+      </footer>
+
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-38964536-1']);
+        _gaq.push(['_setDomainName', 'ruby.org.nz']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
     </div>
   </body>
 </html>
