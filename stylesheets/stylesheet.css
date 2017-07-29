@@ -154,6 +154,15 @@ footer {
   text-align: right;
 }
 
+.image {
+  margin: 0 auto 0 5em;
+  width: 100px;
+}
+
+ul li img {
+    vertical-align: middle;
+}
+
 @media screen and (max-width: 640px) {
   body, html {
     font-size: 1em;
