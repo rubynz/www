@@ -163,6 +163,18 @@ ul li img {
     vertical-align: middle;
 }
 
+.companies li {
+  list-style: none;
+}
+
+.company {
+  margin-bottom: 3em;
+}
+
+.company h3 {
+  margin-bottom: 0.5em;
+}
+
 @media screen and (max-width: 640px) {
   body, html {
     font-size: 1em;
