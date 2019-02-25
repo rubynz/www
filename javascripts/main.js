@@ -1,28 +1,8 @@
 /*global $*/
 
 $(document).ready(function () {
-  smoothScroll();
   mobileNav();
 });
-
-function smoothScroll () {
-  var anchorPattern = /^#/;
-
-  $('.menu a').click(function (e) {
-    var href = $(e.target).attr('href');
-
-    // Don't try and smooth scroll external links
-    if (!anchorPattern.test(href)) {
-      return true;
-    }
-
-    e.preventDefault();
-
-    $('html, body').animate({
-      scrollTop: $(href).offset().top - 20
-    }, 300);
-  });
-}
 
 function mobileNav () {
   var $sidebar = $('aside.sidebar');
