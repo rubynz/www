@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# Exit immediately if any commmand fails
+set -e
+
+function at_exit {
+  local exit_status=$?
+
+  if [[ $exit_status -eq 1 ]]; then
+    echo
+    echo "! Set-up failed. Please address the issues above and try again."
+  fi
+}
+
+trap at_exit EXIT
+
+echo "==> Checking prerequisites"
+
+command -v ruby || {
+  echo "Ruby not detected. Please install Ruby: https://www.ruby-lang.org/en/downloads/"
+  exit 1
+}
+
+command -v bundle || {
+  echo "Bundler not detected. Please install it with `gem install bundler`"
+  exit 1
+}
+
+echo "==> Installing dependencies"
+bundle install
+
+cat <<INSTRUCTIONS
+==> You're good to go!
+
+    To start the site locally, run:
+
+      bin/start
+
+INSTRUCTIONS
