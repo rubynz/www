@@ -6,7 +6,7 @@ set -e
 function at_exit {
   local exit_status=$?
 
-  if [[ $exit_status -eq 1 ]]; then
+  if [[ ! $exit_status -eq 0 ]]; then
     echo
     echo "! Set-up failed. Please address the issues above and try again."
   fi
