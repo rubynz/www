@@ -1,0 +1,129 @@
+---
+Title: Events
+layout: default
+---
+
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h1>Events</h1>
+
+    <h2>Upcoming</h2>
+
+    <p>Subscribe to events: <a href="webcal://rubynz-events.herokuapp.com/feed.ics">webcal://rubynz-events.herokuapp.com/feed.ics</a></p>
+
+    <div id="events"></div>
+
+    <h2>Special Events</h2>
+
+    <ul>
+        <li>
+          Rails Bridge:
+          We support <a href="https://railsbridge.nz/">Rails Bridge events in Wellington</a>. They are a great way for beginners to get programming with Rails.
+        </li>
+        <li>
+          <a href="http://kiwi.ruby.nz">Kiwi Ruby</a>:
+          The inaugural Kiwi Ruby was held in Wellington on November 2-3, 2017.
+        </li>
+        <li>
+          <a href="http://camp.ruby.nz">Rails Camp NZ</a>:
+          Rails Camp NZ #7 was held in February 2017.
+        </li>
+        <li>
+          Rails Girls:
+          We've supported Rails Girls events in <a href="http://railsgirls.com/wellington">Wellington</a>, <a href="http://railsgirls.com/christchurch">Christchurch</a>, <a href="http://railsgirls.com/motueka">Motueka</a>, and <a href="http://railsgirls.com/auckland">Auckland</a>.
+        </li>
+      </ul>
+
+      <h2>Running an event</h2>
+
+      <p>
+        If you'd like to get involved with running a Ruby event in New Zealand, email <a href="mailto:committee@ruby.nz">committee@ruby.nz</a>, or get in touch with any of the <a href="#current-committee">committee members</a> on Slack.
+      </p>
+      <p>
+        Let us know what you want to do and what kind of support you need.
+      </p>
+      <p>
+        Event organisers should familiarise themselves with the committee's
+        <a href="/events/alcohol-advice.html">advice on NZ legislation</a>.
+      </p>
+  </div>
+</div>
+
+<!-- Use DOMPurify for sanitizing HTML -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/1.0.10/purify.min.js"></script>
+
+<script>
+  const eventsURL = 'https://rubynz-events.herokuapp.com/feed.json';
+  const targetElement = document.getElementById('events');
+
+  function renderEvent(event) {
+    const safeDescription = DOMPurify.sanitize(event.description);
+
+    return `
+      <div class="event">
+        <h3><a href="${event.url}">${event.title}</a></h3>
+
+        <div class="details">
+          <strong>When</strong>
+          <time datetime="${event.startTime}">
+            ${event.startTime}
+          </time>
+          <br>
+          <strong>Where</strong>
+          ${event.location}
+        </div>
+
+        <div class="description">
+          ${safeDescription}
+        </div>
+      </div>
+    `
+  }
+
+  function renderEvents(events) {
+    return events.map(renderEvent).join("\n");
+  }
+
+  function eventsFrom(data) {
+    const allEvents = data.eventSources.reduce((collection, eventSource) => {
+      eventSource.events.forEach(event => {
+        event.startTime = new Date(event.startTime);
+        event.endTime = new Date(event.endTime);
+      });
+
+      return collection.concat(eventSource.events);
+    }, []);
+
+    return allEvents.sort((a, b) => a.startTime - b.startTime);
+  }
+
+  function selectUpcoming(events) {
+    const now = new Date();
+    const oneMonthFromNow = now.setMonth(now.getMonth() + 1);
+
+    return events.filter(event => event.startTime < oneMonthFromNow);
+  }
+
+  async function retrieveEvents () {
+    targetElement.innerHTML = '<p>Loading events…</p>';
+
+    try {
+      const response = await fetch(eventsURL);
+      const data = await response.json();
+      const upcomingEvents = selectUpcoming(eventsFrom(data));
+
+      targetElement.innerHTML = renderEvents(upcomingEvents);
+    } catch (error) {
+      console.error(error);
+
+      targetElement.innerHTML = `
+        <p>
+          An error ocurred while loading events.
+          <a href="javascript:retrieveEvents()">Retry?</a>
+        </p>
+      `;
+    }
+  }
+
+  retrieveEvents();
+</script>
