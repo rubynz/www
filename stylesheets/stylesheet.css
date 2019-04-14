@@ -202,3 +202,21 @@ footer {
     height: 100%;
   }
 }
+
+#events {
+  border-top: 1px solid white;
+}
+
+.event {
+  border-bottom: 1px solid white;
+}
+
+.event .details {
+  margin: 1em 0;
+}
+
+.event .description {
+  color: #666;
+  border-left: 4px solid #ccc;
+  padding-left: 1em;
+}
