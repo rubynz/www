@@ -89,7 +89,13 @@ layout: default
       </ul>
     </li>
   </ul>
-  <p><a href="https://github.com/rubynz/www/wiki/2020-Committee-Minutes">Committee meeting minutes</a> are available publicly from April 2019 onwards.</p>
+
+  <h3>Meeting Minutes</h3>
+  {% for minutes in site.committee_minutes %}
+    <p><a href="{{minutes.url}}">{{ minutes.title }}</a></p>
+  {% endfor %}
+
+  <p>Older minutes can be found <a href="https://github.com/rubynz/www/wiki/2019-Committee-Minutes">on GitHub</a>.</p>
 </section>
 <hr />
 <section id="past-committee">
