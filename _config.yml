@@ -1,2 +1,5 @@
 plugins:
   - jekyll-redirect-from
+collections:
+  committee_minutes:
+    output: true
