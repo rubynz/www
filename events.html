@@ -7,7 +7,16 @@ layout: default
   <div class="pure-u-1">
     <h1>Events</h1>
     <p>Events are run by members of the community. <a href="/organising-an-event">If you're running an event or interested in Ruby NZ support for starting something, get in touch with us.</a></p>
-    
+
+    <h2>Regular meetups</h2>
+
+    <ul>
+      <li><a href="https://www.meetup.com/aucklandruby/">Ruby Nights</a> (Auckland)</li>
+      <li><a href="https://www.meetup.com/Christchurch-Ruby-Group/">Christchurch Ruby</a></li>
+      <li><a href="https://www.meetup.com/WellingtonRuby/">WellingtonRuby</a></li>
+      <li><a href="https://www.meetup.com/wellrailed/">Wellrailed</a> (Wellington)</li>
+    </ul>
+
     <h2>Special Events</h2>
 
     <ul>
@@ -32,89 +41,5 @@ layout: default
           We've supported Rails Girls events in <a href="http://railsgirls.com/wellington">Wellington</a>, <a href="http://railsgirls.com/christchurch">Christchurch</a>, <a href="http://railsgirls.com/motueka">Motueka</a>, and <a href="http://railsgirls.com/auckland">Auckland</a>.
         </li>
     </ul>
-    <h2>Upcoming</h2>
-
-    <p>Subscribe to events: <a href="https://rubynz-events.herokuapp.com/feed.ics">https://rubynz-events.herokuapp.com/feed.ics</a></p>
-
-    <div id="events"></div>
   </div>
 </div>
-
-<!-- Use DOMPurify for sanitizing HTML -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/1.0.10/purify.min.js"></script>
-
-<script>
-  const eventsURL = 'https://rubynz-events.herokuapp.com/feed.json';
-  const targetElement = document.getElementById('events');
-
-  function renderEvent(event) {
-    const safeDescription = DOMPurify.sanitize(event.description);
-
-    return `
-      <div class="event">
-        <h3><a href="${event.url}">${event.title}</a></h3>
-
-        <div class="details">
-          <strong>When</strong>
-          <time datetime="${event.startTime}">
-            ${event.startTime}
-          </time>
-          <br>
-          <strong>Where</strong>
-          ${event.location}
-        </div>
-
-        <div class="description">
-          ${safeDescription}
-        </div>
-      </div>
-    `
-  }
-
-  function renderEvents(events) {
-    return events.map(renderEvent).join("\n");
-  }
-
-  function eventsFrom(data) {
-    const allEvents = data.eventSources.reduce((collection, eventSource) => {
-      eventSource.events.forEach(event => {
-        event.startTime = new Date(event.startTime);
-        event.endTime = new Date(event.endTime);
-      });
-
-      return collection.concat(eventSource.events);
-    }, []);
-
-    return allEvents.sort((a, b) => a.startTime - b.startTime);
-  }
-
-  function selectUpcoming(events) {
-    const now = new Date();
-    const oneMonthFromNow = now.setMonth(now.getMonth() + 1);
-
-    return events.filter(event => event.startTime < oneMonthFromNow);
-  }
-
-  async function retrieveEvents () {
-    targetElement.innerHTML = '<p>Loading events…</p>';
-
-    try {
-      const response = await fetch(eventsURL);
-      const data = await response.json();
-      const upcomingEvents = selectUpcoming(eventsFrom(data));
-
-      targetElement.innerHTML = renderEvents(upcomingEvents);
-    } catch (error) {
-      console.error(error);
-
-      targetElement.innerHTML = `
-        <p>
-          An error ocurred while loading events.
-          <a href="javascript:retrieveEvents()">Retry?</a>
-        </p>
-      `;
-    }
-  }
-
-  retrieveEvents();
-</script>
